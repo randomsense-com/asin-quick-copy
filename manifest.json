@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "ASIN Quick Copy",
+  "version": "1.0",
+  "description": "Quickly copy ASIN from the Amazon product page.",
+  "homepage_url": "https://sennse.jp/oss/asin-quick-copy",
+  "permissions": [
+    "scripting", 
+    "activeTab",
+    "clipboardWrite"
+  ],
+  "host_permissions": [
+    "https://*.amazon.ca/*",
+    "https://*.amazon.co.jp/*", 
+    "https://*.amazon.co.uk/*",
+    "https://*.amazon.com.au/*",
+    "https://*.amazon.com.br/*",
+    "https://*.amazon.com.mx/*",
+    "https://*.amazon.com/*",
+    "https://*.amazon.de/*",
+    "https://*.amazon.es/*",
+    "https://*.amazon.fr/*",
+    "https://*.amazon.in/*",
+    "https://*.amazon.it/*",
+    "https://*.amazon.nl/*",
+    "https://*.amzn.com/*"
+  ],
+  "commands": {
+    "copy": {
+      "suggested_key": {
+        "default": "Alt+A"
+      },
+      "description": "Copy"
+    }
+  },
+  "action": {
+    "default_title": "ASIN Quick Copy"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
