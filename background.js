@@ -1,9 +1,10 @@
-chrome.commands.onCommand.addListener((command) => {
+chrome.commands.onCommand.addListener(async (command) => {
   if (command === "copy") {
-    chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
-      chrome.scripting.executeScript({
-        target: {tabId: tabs[0].id},
-        func: () => {
+    try {
+      const [tab] = await chrome.tabs.query({active: true, currentWindow: true});
+      await chrome.scripting.executeScript({
+        target: {tabId: tab.id},
+        func: async () => {
           const asin = location.pathname.match(/\/([A-Z0-9]{10})(?:[/?]|$)/)?.[1] 
             || document.querySelector('[data-asin]')?.getAttribute('data-asin');
           
@@ -12,11 +13,16 @@ chrome.commands.onCommand.addListener((command) => {
             return;
           }
 
-          navigator.clipboard.writeText(asin)
-            .then(() => alert('ASIN Copy Success ' + asin))
-            .catch(err => alert('ASIN Copy Failed ' + err));
+          try {
+            await navigator.clipboard.writeText(asin);
+            alert('ASIN Copy Success ' + asin);
+          } catch (err) {
+            alert('ASIN Copy Failed ' + err);
+          }
         }
-      }).catch(err => console.error('Script execution failed:', err));
-    });
+      });
+    } catch (err) {
+      console.error('Script execution failed:', err);
+    }
   }
 });

@@ -1,17 +1,17 @@
 {
   "manifest_version": 3,
   "name": "ASIN Quick Copy",
-  "version": "1.0",
+  "version": "1.1",
   "description": "Quickly copy ASIN from the Amazon product page.",
   "homepage_url": "https://sennse.jp/oss/asin-quick-copy",
   "permissions": [
-    "scripting", 
+    "scripting",
     "activeTab",
     "clipboardWrite"
   ],
   "host_permissions": [
     "https://*.amazon.ca/*",
-    "https://*.amazon.co.jp/*", 
+    "https://*.amazon.co.jp/*",
     "https://*.amazon.co.uk/*",
     "https://*.amazon.com.au/*",
     "https://*.amazon.com.br/*",
