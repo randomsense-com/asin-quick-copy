@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "ASIN Quick Copy",
-  "version": "1.2",
-  "description": "Alt+A or Option+A to quickly copy ASIN from an Amazon product page.",
+  "version": "1.3",
+  "description": "Click the icon or Alt+A, Option+A to quickly copy the ASIN from an Amazon product page.",
   "icons": {
     "16": "icons/16.png",
     "48": "icons/48.png",
@@ -42,6 +42,7 @@
     "default_title": "ASIN Quick Copy"
   },
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "background.js",
+    "type": "module"
   }
 }
