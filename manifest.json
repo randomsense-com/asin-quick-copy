@@ -8,7 +8,7 @@
     "48": "icons/48.png",
     "128": "icons/128.png"
   },
-  "homepage_url": "https://sennse.jp/oss/asin-quick-copy",
+  "homepage_url": "https://oss.randomsense.jp/asin-quick-copy",
   "permissions": [
     "scripting",
     "activeTab",
